@@ -1,51 +1,51 @@
 - Instalación docker:
     - **apt install docker.io -y**
 - Para visualizar as redes:
-    **docker network ls**
+  - **docker network ls**
 - Para crear una red (por defecto viene en modo bridge):
-    **docker network create mynet** 
+  - **docker network create mynet** 
 - Para crear la base de datos de mariadb:
-    **docker run -d --name some-mariadb --env MARIADB_USER=user --env MARIADB_PASSWORD=mysecret --env MARIADB_ROOT_PASSWORD=secret --env MARIADB_DATABASE=wordpressdb --network=mynet  mariadb:latest**
+  - **docker run -d --name some-mariadb --env MARIADB_USER=user --env MARIADB_PASSWORD=mysecret --env MARIADB_ROOT_PASSWORD=secret --env MARIADB_DATABASE=wordpressdb --network=mynet  mariadb:latest**
 - Para crear el wordpress:
-    **docker run --name some-wordpress -p 8080:80 --network=mynet -d wordpress**
+  - **docker run --name some-wordpress -p 8080:80 --network=mynet -d wordpress**
 - Para visualizar lo que acabas de crear es el comando:_
-    **docker ps**
+  - **docker ps**
 En un navegador introducimos: **localhost:8080**
 - Para ver el mariadb es con:
-    **docker inspect some-mariadb**
+  - **docker inspect some-mariadb**
 - Para ver el wordpress es con:_
-    **docker inspect some-wordpress**
+  - **docker inspect some-wordpress**
 - Para entrar na configuración de wordpress:
-    **docker exec -ti some-wordpress bash**
+  - **docker exec -ti some-wordpress bash**
 - Para entrar na configuración de mariadb:
-    **docker exec -ti some-mariadb bash**
+  - **docker exec -ti some-mariadb bash**
 - Para poder hacer ping con mariadb y wordpress:
-    **apt update && apt install iputils-ping --yes**
-    **172.X.0.2 ip de wordpress**
-    **172.X.0.3 ip de mariadb**
+  - **apt update && apt install iputils-ping --yes**
+  - **172.X.0.2 ip de wordpress**
+  - **172.X.0.3 ip de mariadb**
 - Configuramos en el navegador:
-
+- 
     ![imagen_1](/img/imagen-1.png)
     ![imagen_2](/img/imagen-2.png)
 
 - Para entraar en la base de datos de mysql:
-    **docker exec -ti some-mariadb bash**
-    **mysql -uroot -p**
+  - **docker exec -ti some-mariadb bash**
+  - **mysql -uroot -p**
 - Para ver as bases de datos:
-    **show databases;**
+  - **show databases;**
 - Para ver entrar en una base de datos:_
-    **use wordpressdb**
+  - **use wordpressdb**
 - Para ver una tabla:
-    **show tables;**
+  - **show tables;**
 - Para hacer consultas:
-    **select * from wp_users;**
+  - **select * from wp_users;**
 - Para parar wordpress/mariadb:
-    **docker stop some-mariadb**
+  - **docker stop some-mariadb**
 - Para arrancar wordpress/mariadb:
-    **docker start some-mariadb**
+  - **docker start some-mariadb**
 - Para borrar:
-    **docker rm -f some-mariadb**
+  - **docker rm -f some-mariadb**
 - Para borrar:
-    **docker rm -f some-wordpress**
+  - **docker rm -f some-wordpress**
 - Para poner la base de datos:
-    **docker run -d --name some-mariadb --env MARIADB_USER=user --env MARIADB_PASSWORD=mysecret --env MARIADB_ROOT_PASSWORD=secret --env MARIADB_DATABASE=wordpressdb --network=mynet -v /carpeta/midb:/var/lib/mysql mariadb:latest**
+  - **docker run -d --name some-mariadb --env MARIADB_USER=user --env MARIADB_PASSWORD=mysecret --env MARIADB_ROOT_PASSWORD=secret --env MARIADB_DATABASE=wordpressdb --network=mynet -v /carpeta/midb:/var/lib/mysql mariadb:latest**
