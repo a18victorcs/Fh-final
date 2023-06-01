@@ -43,6 +43,8 @@ En un navegador introducimos: **localhost:8080**
   - **docker stop some-mariadb**
 - Para arrancar wordpress/mariadb:
   - **docker start some-mariadb**
+- Donde se guarda mariadb:
+  - **/var/lib/mysql**
 - Para borrar:
   - **docker rm -f some-mariadb**
 - Para borrar:
