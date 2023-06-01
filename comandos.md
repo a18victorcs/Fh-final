@@ -24,7 +24,7 @@ En un navegador introducimos: **localhost:8080**
   - **172.X.0.2 ip de wordpress**
   - **172.X.0.3 ip de mariadb**
 - Configuramos en el navegador:
-- 
+
     ![imagen_1](/img/imagen-1.png)
     ![imagen_2](/img/imagen-2.png)
 
